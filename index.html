@@ -6,6 +6,28 @@
   <title>Student Query Panel</title>
   <link rel="stylesheet" href="style.css">
   <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+  <!-- Firebase SDK -->
+  <script type="module">
+    // Import Firebase modules
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+    import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyARRbgfZb5pFPvSGY_vXut_rl2Bb3KKmew",
+      authDomain: "pmi-eduverse-student-query.firebaseapp.com",
+      projectId: "pmi-eduverse-student-query",
+      storageBucket: "pmi-eduverse-student-query.firebasestorage.app",
+      messagingSenderId: "619300927023",
+      appId: "1:619300927023:web:9131339a1011194e97b8da",
+      measurementId: "G-PT1CCKJVQ2"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+  </script>
 </head>
 <body>
   <div class="container">
@@ -35,6 +57,7 @@
       </form>
     </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
