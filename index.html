@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Query Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div id="login-panel" class="panel">
+      <h1>Welcome to Student Query Portal</h1>
+      <button id="google-login" class="btn neon-btn">Login with Google</button>
+    </div>
+
+    <div id="form-panel" class="panel hidden">
+      <h1>Submit Your Query</h1>
+      <form id="query-form">
+        <label>Name:</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+        <label>College:</label>
+        <input type="text" id="college" placeholder="Enter your college name" required>
+        <label>Subject:</label>
+        <input type="text" id="subject" placeholder="Enter your subject" required>
+        <label>Question:</label>
+        <textarea id="question" placeholder="Type your question here..." required></textarea>
+        <button type="submit" class="btn neon-btn">Submit</button>
+      </form>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
