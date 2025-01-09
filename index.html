@@ -9,7 +9,9 @@
 <body>
     <div class="form-container">
         <h1>Student Query System</h1>
-        <button id="googleLogin">Login with Google</button>
+        <div id="authSection">
+            <button id="googleLogin">Login with Google</button>
+        </div>
         <form id="studentForm" style="display: none;">
             <input type="text" id="name" name="name" placeholder="Your Name" required>
             <input type="text" id="college" name="college" placeholder="College Name" required>
@@ -20,7 +22,6 @@
     </div>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="script.js"></script>
 </body>
