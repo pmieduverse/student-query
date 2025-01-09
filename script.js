@@ -1,21 +1,29 @@
-// Import Firebase modules
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+// Firebase Configuration (Replace with your Firebase project's credentials)
+const firebaseConfig = {
+  apiKey: "AIzaSyARRbgfZb5pFPvSGY_vXut_rl2Bb3KKmew",
+  authDomain: "pmi-eduverse-student-query.firebaseapp.com",
+  projectId: "pmi-eduverse-student-query",
+  storageBucket: "pmi-eduverse-student-query.firebasestorage.app",
+  messagingSenderId: "619300927023",
+  appId: "1:619300927023:web:9131339a1011194e97b8da",
+  measurementId: "G-PT1CCKJVQ2"
+};
 
-// Initialize Firebase (this will use your firebaseConfig)
-const app = initializeApp(firebaseConfig);
-const auth = getAuth();
+// Initialize Firebase
+const app = firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
 
-// Google login function
+// Google Login Function
 document.getElementById("google-login").addEventListener("click", function () {
-  const provider = new GoogleAuthProvider();
+  const provider = new firebase.auth.GoogleAuthProvider();
   
   // Sign in with Google
-  signInWithPopup(auth, provider)
+  auth.signInWithPopup(provider)
     .then((result) => {
       const user = result.user;
       console.log("User logged in: ", user.displayName);
 
-      // Hide login panel and show the form panel
+      // Hide login panel and show form panel
       document.getElementById("login-panel").classList.add("hidden");
       document.getElementById("form-panel").classList.remove("hidden");
     })
