@@ -1,45 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student Query Panel</title>
-  <link rel="stylesheet" href="style.css">
-  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
-  <!-- Firebase SDK -->
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Query System</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <!-- Google Login Panel -->
-    <div id="login-panel" class="panel">
-      <h1>Welcome to Student Query Portal</h1>
-      <button id="google-login" class="btn neon-btn">Login with Google</button>
+    <div class="form-container">
+        <h1>Student Query System</h1>
+        <button id="googleLogin">Login with Google</button>
+        <form id="studentForm" style="display: none;">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <input type="text" id="college" name="college" placeholder="College Name" required>
+            <input type="text" id="subject" name="subject" placeholder="Subject/Department" required>
+            <textarea id="question" name="question" placeholder="Your Question" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
     </div>
-
-    <!-- Query Form Panel -->
-    <div id="form-panel" class="panel hidden">
-      <h1>Submit Your Query</h1>
-      <form id="query-form">
-        <label for="name">Name:</label>
-        <input type="text" id="name" placeholder="Enter your name" required>
-        
-        <label for="college">College:</label>
-        <input type="text" id="college" placeholder="Enter your college name" required>
-        
-        <label for="subject">Subject:</label>
-        <input type="text" id="subject" placeholder="Enter your subject" required>
-        
-        <label for="question">Question:</label>
-        <textarea id="question" placeholder="Type your question here..." required></textarea>
-        
-        <button type="submit" class="btn neon-btn">Submit</button>
-      </form>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
