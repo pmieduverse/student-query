@@ -19,14 +19,17 @@ emailjs.init("eT5ap2denjFuWGh33");
 // Google Login Functionality
 document.getElementById("googleLogin").addEventListener("click", function () {
     const googleProvider = new firebase.auth.GoogleAuthProvider();
+
     auth.signInWithPopup(googleProvider)
         .then((result) => {
-            document.getElementById("googleLogin").style.display = "none";
+            const user = result.user;
+            alert(`Welcome, ${user.displayName}!`);
+            // Hide login button and show the form
+            document.getElementById("authSection").style.display = "none";
             document.getElementById("studentForm").style.display = "block";
-            console.log("User logged in:", result.user);
         })
         .catch((error) => {
-            console.error("Error during login:", error);
+            alert("Error during login: " + error.message);
         });
 });
 
